@@ -18,7 +18,7 @@ En esta fase empezamos a trabajar en el Proyecto
 ![Tablas](https://i.ibb.co/PmgNytJ/tablas.png) Tablas
 * Al finalizar las tablas flores se dedico a realizar la [normalización](https://github.com/jflorespastrana/Iberos/blob/main/normalizaci%C3%B3n.pdf)
 ![Tablas](https://cdn.discordapp.com/attachments/825096835689349140/839275786162143262/1FN.PNG) FN1
-![Tablas](https://cdn.discordapp.com/attachments/825096835689349140/839275802754809876/2FN.PNGg) FN2
+![Tablas](https://cdn.discordapp.com/attachments/825096835689349140/839275802754809876/2FN.PNG) FN2
 ![Tablas](https://cdn.discordapp.com/attachments/825096835689349140/839275819326373888/3FN.PNG) FN3
 * Y por último Khalilov terminó el .pdf con los requisitos y estuvo trabajando en el MarkDown del github
 ## Fase 2
