@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema Iberos
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema Iberos
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `Iberos` DEFAULT CHARACTER SET utf8 ;
+USE `Iberos` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Museo_Ibero`
+-- Table `Iberos`.`Museo_Ibero`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Museo_Ibero` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Museo_Ibero` (
   `CIF` VARCHAR(9) NOT NULL,
   `Nombre` VARCHAR(45) NULL,
   `Direccion` VARCHAR(45) NULL,
@@ -30,9 +30,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Empleado`
+-- Table `Iberos`.`Empleado`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Empleado` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Empleado` (
   `DNI_Empleado` VARCHAR(9) NOT NULL,
   `N_Seg_Social` VARCHAR(45) NULL,
   `Nombre` VARCHAR(45) NULL,
@@ -43,76 +43,76 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Empleado` (
   INDEX `fk_Empleado_Museo_Ibero_idx` (`Museo_Ibero_CIF` ASC) VISIBLE,
   CONSTRAINT `fk_Empleado_Museo_Ibero`
     FOREIGN KEY (`Museo_Ibero_CIF`)
-    REFERENCES `mydb`.`Museo_Ibero` (`CIF`)
+    REFERENCES `Iberos`.`Museo_Ibero` (`CIF`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Director`
+-- Table `Iberos`.`Director`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Director` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Director` (
   `Experiencia` VARCHAR(200) NULL,
   `Empleado_DNI_Empleado` VARCHAR(9) NOT NULL,
   PRIMARY KEY (`Empleado_DNI_Empleado`),
   CONSTRAINT `fk_Director_Empleado1`
     FOREIGN KEY (`Empleado_DNI_Empleado`)
-    REFERENCES `mydb`.`Empleado` (`DNI_Empleado`)
+    REFERENCES `Iberos`.`Empleado` (`DNI_Empleado`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Guia`
+-- Table `Iberos`.`Guia`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Guia` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Guia` (
   `Idioma` VARCHAR(200) NULL,
   `Empleado_DNI_Empleado` VARCHAR(9) NOT NULL,
   PRIMARY KEY (`Empleado_DNI_Empleado`),
   CONSTRAINT `fk_Guia_Empleado1`
     FOREIGN KEY (`Empleado_DNI_Empleado`)
-    REFERENCES `mydb`.`Empleado` (`DNI_Empleado`)
+    REFERENCES `Iberos`.`Empleado` (`DNI_Empleado`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Guarda`
+-- Table `Iberos`.`Guarda`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Guarda` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Guarda` (
   `Turno` VARCHAR(10) NULL,
   `Empleado_DNI_Empleado` VARCHAR(9) NOT NULL,
   PRIMARY KEY (`Empleado_DNI_Empleado`),
   CONSTRAINT `fk_Guarda_Empleado1`
     FOREIGN KEY (`Empleado_DNI_Empleado`)
-    REFERENCES `mydb`.`Empleado` (`DNI_Empleado`)
+    REFERENCES `Iberos`.`Empleado` (`DNI_Empleado`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Limpiador`
+-- Table `Iberos`.`Limpiador`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Limpiador` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Limpiador` (
   `Zona_Museo` VARCHAR(50) NULL,
   `Empleado_DNI_Empleado` VARCHAR(9) NOT NULL,
   PRIMARY KEY (`Empleado_DNI_Empleado`),
   CONSTRAINT `fk_Limpiador_Empleado1`
     FOREIGN KEY (`Empleado_DNI_Empleado`)
-    REFERENCES `mydb`.`Empleado` (`DNI_Empleado`)
+    REFERENCES `Iberos`.`Empleado` (`DNI_Empleado`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Actividad`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Actividad` (
+-- Table `Iberos`.`Actividad`
+-- -----------------Iberos-----------------------------------
+CREATE TABLE IF NOT EXISTS `Iberos`.`Actividad` (
   `Nombre` VARCHAR(60) NOT NULL,
   `Fecha` DATE NULL,
   `Tipo` VARCHAR(45) NULL,
@@ -121,16 +121,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Actividad` (
   INDEX `fk_Actividad_Museo_Ibero1_idx` (`Museo_Ibero_CIF` ASC) VISIBLE,
   CONSTRAINT `fk_Actividad_Museo_Ibero1`
     FOREIGN KEY (`Museo_Ibero_CIF`)
-    REFERENCES `mydb`.`Museo_Ibero` (`CIF`)
+    REFERENCES `Iberos`.`Museo_Ibero` (`CIF`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Exposicion`
+-- Table `Iberos`.`Exposicion`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Exposicion` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Exposicion` (
   `Cod_Exposicion` INT NOT NULL,
   `Nombre` VARCHAR(45) NULL,
   `Descripcion` VARCHAR(45) NULL,
@@ -140,16 +140,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Exposicion` (
   INDEX `fk_Exposicion_Museo_Ibero1_idx` (`Museo_Ibero_CIF` ASC) VISIBLE,
   CONSTRAINT `fk_Exposicion_Museo_Ibero1`
     FOREIGN KEY (`Museo_Ibero_CIF`)
-    REFERENCES `mydb`.`Museo_Ibero` (`CIF`)
+    REFERENCES `Iberos`.`Museo_Ibero` (`CIF`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Sala`
+-- Table `Iberos`.`Sala`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Sala` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Sala` (
   `N_Sala` INT NOT NULL,
   `Aforo` INT NULL,
   `Museo_Ibero_CIF` VARCHAR(9) NOT NULL,
@@ -159,21 +159,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Sala` (
   INDEX `fk_Sala_Exposicion1_idx` (`Exposicion_Cod_Exposicion` ASC) VISIBLE,
   CONSTRAINT `fk_Sala_Museo_Ibero1`
     FOREIGN KEY (`Museo_Ibero_CIF`)
-    REFERENCES `mydb`.`Museo_Ibero` (`CIF`)
+    REFERENCES `Iberos`.`Museo_Ibero` (`CIF`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `fk_Sala_Exposicion1`
     FOREIGN KEY (`Exposicion_Cod_Exposicion`)
-    REFERENCES `mydb`.`Exposicion` (`Cod_Exposicion`)
+    REFERENCES `Iberos`.`Exposicion` (`Cod_Exposicion`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Exposicion_has_Sala`
+-- Table `Iberos`.`Exposicion_has_Sala`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Exposicion_has_Sala` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Exposicion_has_Sala` (
   `Exposicion_Cod_Exposicion` INT NOT NULL,
   `Sala_N_Sala` INT NOT NULL,
   PRIMARY KEY (`Exposicion_Cod_Exposicion`, `Sala_N_Sala`),
@@ -181,77 +181,164 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Exposicion_has_Sala` (
   INDEX `fk_Exposicion_has_Sala_Exposicion1_idx` (`Exposicion_Cod_Exposicion` ASC) VISIBLE,
   CONSTRAINT `fk_Exposicion_has_Sala_Exposicion1`
     FOREIGN KEY (`Exposicion_Cod_Exposicion`)
-    REFERENCES `mydb`.`Exposicion` (`Cod_Exposicion`)
+    REFERENCES `Iberos`.`Exposicion` (`Cod_Exposicion`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE,
   CONSTRAINT `fk_Exposicion_has_Sala_Sala1`
     FOREIGN KEY (`Sala_N_Sala`)
-    REFERENCES `mydb`.`Sala` (`N_Sala`)
+    REFERENCES `Iberos`.`Sala` (`N_Sala`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Arte`
+-- Table `Iberos`.`Arte`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Arte` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Arte` (
   `Estilo` VARCHAR(45) NULL,
   `Exposicion_Cod_Exposicion` INT NOT NULL,
   PRIMARY KEY (`Exposicion_Cod_Exposicion`),
   CONSTRAINT `fk_Arte_Exposicion1`
     FOREIGN KEY (`Exposicion_Cod_Exposicion`)
-    REFERENCES `mydb`.`Exposicion` (`Cod_Exposicion`)
+    REFERENCES `Iberos`.`Exposicion` (`Cod_Exposicion`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Historia`
+-- Table `Iberos`.`Historia`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Historia` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Historia` (
   `Epoca` VARCHAR(45) NULL,
   `Exposicion_Cod_Exposicion` INT NOT NULL,
   PRIMARY KEY (`Exposicion_Cod_Exposicion`),
   CONSTRAINT `fk_Historia_Exposicion1`
     FOREIGN KEY (`Exposicion_Cod_Exposicion`)
-    REFERENCES `mydb`.`Exposicion` (`Cod_Exposicion`)
+    REFERENCES `Iberos`.`Exposicion` (`Cod_Exposicion`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Religion`
+-- Table `Iberos`.`Religion`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Religion` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Religion` (
   `Deidades` VARCHAR(45) NULL,
   `Exposicion_Cod_Exposicion` INT NOT NULL,
   PRIMARY KEY (`Exposicion_Cod_Exposicion`),
   CONSTRAINT `fk_Religion_Exposicion1`
     FOREIGN KEY (`Exposicion_Cod_Exposicion`)
-    REFERENCES `mydb`.`Exposicion` (`Cod_Exposicion`)
+    REFERENCES `Iberos`.`Exposicion` (`Cod_Exposicion`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Antiguedades`
+-- Table `Iberos`.`Antiguedades`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Antiguedades` (
+CREATE TABLE IF NOT EXISTS `Iberos`.`Antiguedades` (
   `Tipo` VARCHAR(45) NULL,
   `Exposicion_Cod_Exposicion` INT NOT NULL,
   PRIMARY KEY (`Exposicion_Cod_Exposicion`),
   CONSTRAINT `fk_Antiguedades_Exposicion1`
     FOREIGN KEY (`Exposicion_Cod_Exposicion`)
-    REFERENCES `mydb`.`Exposicion` (`Cod_Exposicion`)
+    REFERENCES `Iberos`.`Exposicion` (`Cod_Exposicion`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Inserción de datos.
+-- -----------------------------------------------------
+INSERT INTO Museo_Ibero VALUES ("X76545678","Museo el opio","Calle Constitucion Espanola 23","25000");
+
+INSERT INTO Empleado VALUES ("X9200000J","23243454345342","Dimitri","Vladikov",6500,"X76545678");
+INSERT INTO Empleado VALUES ("X9203040J","23264564345342","Sergei","Vlitov",7640,"X76545678");
+INSERT INTO Empleado VALUES ("69203040V","23264564655342","Antonio","Rodriguez",640,"X76545678");
+INSERT INTO Empleado VALUES ("69213240X","232645444655342","Antonia","Rodriguez",740,"X76545678");
+
+INSERT INTO Limpiador VALUES ("Baños y pasillos","69203040V");
+INSERT INTO Guia VALUES ("Español y Japones","69213240X");
+INSERT INTO Director VALUES ("Museos de San Petersburgo y Moscú","X9203040J");
+INSERT INTO Guarda VALUES ("Noche","X9200000J");
+
+INSERT INTO Actividad VALUES ("Pasiones mitologicas","2023-10-02","Conferencia","X76545678");
+INSERT INTO Actividad VALUES ("El legado del rey","2018-11-05","Seminario","X76545678");
+
+INSERT INTO Exposicion VALUES (01,"Arte Ibero","Conozca el arte iberico al maximo esplendor","2018-11-05","X76545678");
+INSERT INTO Exposicion VALUES (02,"Vasijas Ibericas","Exposicion concentrada en las antiguedades","2023-02-05","X76545678");
+
+INSERT INTO Antiguedades VALUES("Edad Media",02);
+INSERT INTO Arte VALUES("Barroco",01);
+
+INSERT INTO Sala VALUES(1,50,"X76545678",01);
+INSERT INTO Sala VALUES(2,300,"X76545678",02);
+
+INSERT INTO Exposicion_has_Sala VALUES (01,2);
+INSERT INTO Exposicion_has_Sala VALUES (02,1);
+
+
+-- -----------------------------------------------------
+-- Instrucciones UPDATE, DELETE y SELECT
+-- -----------------------------------------------------
+-- Subimos el sueldo de Sergei
+UPDATE Empleado
+SET Salario = 10500
+WHERE DNI_Empleado LIKE 'X9203040J';
+
+-- Cambiamos el turno del guarda
+UPDATE Guarda
+SET Turno = 'Dia'
+WHERE Empleado_DNI_Empleado LIKE 'X9200000J';
+
+-- Despedimos a Antonio Rodriguez por ineficiencia laboral
+DELETE FROM Empleado
+WHERE DNI_Empleado='69203040V';
+
+-- Borramos la actividad de Conferencias
+DELETE FROM Actividad
+WHERE Tipo LIKE 'Conferencia';
+
+-- CONSULTA 1 Selecciona el Nombre y Apellidos en una columna del Empleado con el Salario mas alto
+SELECT CONCAT(Nombre,' ',Apellido) as "Nombre y Apellidos"
+FROM Empleado
+ORDER BY Salario DESC
+LIMIT 1;
+
+-- CONSULTA 2 Selecciona el aforo de la sala en la que se realiza la exposicion con Nombre "Arte Ibero"
+SELECT Aforo
+FROM Exposicion
+INNER JOIN Sala
+ON Exposicion.Cod_Exposicion = Sala.Exposicion_Cod_Exposicion
+WHERE Exposicion.Nombre LIKE 'Arte Ibero';
+
+-- CONSULTA 3 Selecciona el salario del empleado con experiencia en "Museos de San Petersburgo y Moscú"
+SELECT Salario
+FROM Empleado, Director
+WHERE Empleado.DNI_Empleado IN (
+    SELECT Empleado_DNI_Empleado 
+    FROM Director 
+    WHERE Experiencia 
+    LIKE 'Museos de San Petersburgo y Moscú');
+
+-- CONSULTA 4 Selecciona el nombre y dni los empleados con un salario menor a 1000 
+SELECT DNI_Empleado, Nombre
+FROM Empleado
+WHERE Salario < 1000;
+
+-- CONSULTA 5 Consulta en que sala se encuentra la exposicion con id 2
+SELECT N_Sala
+FROM Exposicion
+INNER JOIN Sala
+ON Exposicion.Cod_Exposicion = Sala.Exposicion_Cod_Exposicion
+WHERE Exposicion.Cod_Exposicion LIKE 2;
+               
+               
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
