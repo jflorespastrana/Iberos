@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `Iberos`.`Exposicion` (
   `Cod_Exposicion` INT NOT NULL,
   `Nombre` VARCHAR(45) NULL,
   `Descripcion` VARCHAR(45) NULL,
-  `Exposicioncol` DATE NULL,
+  `Fecha` DATE NULL,
   `Museo_Ibero_CIF` VARCHAR(9) NOT NULL,
   PRIMARY KEY (`Cod_Exposicion`),
   INDEX `fk_Exposicion_Museo_Ibero1_idx` (`Museo_Ibero_CIF` ASC) VISIBLE,
