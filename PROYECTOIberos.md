@@ -32,4 +32,6 @@ En esta fase se empezó a realizar el codigo sql
 * Creamos un archivo para realizar instrucciones
 [ARCHIVO CON INSTRUCCIONES Y ENUNCIADOS](https://github.com/jflorespastrana/Iberos/blob/main/instrucciones.sql)
 * Se crea un archivo con las explicaciones [ARCHIVO EXPLICANDO TIPOS DE DATOS, RESTRICCIONS Y CONSULTAS](https://github.com/jflorespastrana/Iberos/blob/main/Documento%20Explicativo%20Tablas%20y%20Consultas.pdf)
+* Captura de pantalla del Trello 
+![Trello](https://i.ibb.co/pv5PQ6w/trello.png) 
 
