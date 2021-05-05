@@ -25,4 +25,8 @@ En esta fase empezamos a trabajar en el Proyecto
 En esta fase se empezó a realizar el codigo sql
 * Aqui esta el codigo .sql
 ![Codigo Workbench](https://raw.githubusercontent.com/jflorespastrana/Iberos/main/esquema_sql.PNG) Workbench
-* Se crea otro archivo .sql para ejectuar las insutrucciones CREATE, INSERT, UPDATE, DELETE y SELECT
+[ARCHIVO CON TABLAS SQL](https://github.com/jflorespastrana/Iberos/blob/main/iberos.sql)
+* Se crea otro archivo .sql para insertar los datos
+[ARCHIVO CON DATOS](https://github.com/jflorespastrana/Iberos/blob/main/datos.sql)
+* Creamos un archivo para realizar instrucciones
+[ARCHIVO CON INSTRUCCIONES Y ENUNCIADOS](https://github.com/jflorespastrana/Iberos/blob/main/datos.sql)
