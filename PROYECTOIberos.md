@@ -30,4 +30,4 @@ En esta fase se empezó a realizar el codigo sql
 * Se crea otro archivo .sql para insertar los datos
 [ARCHIVO CON DATOS](https://github.com/jflorespastrana/Iberos/blob/main/datos.sql)
 * Creamos un archivo para realizar instrucciones
-[ARCHIVO CON INSTRUCCIONES Y ENUNCIADOS](https://github.com/jflorespastrana/Iberos/blob/main/datos.sql)
+[ARCHIVO CON INSTRUCCIONES Y ENUNCIADOS](https://github.com/jflorespastrana/Iberos/blob/main/instrucciones.sql)
