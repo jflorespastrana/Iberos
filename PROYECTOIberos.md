@@ -22,4 +22,6 @@ En esta fase empezamos a trabajar en el Proyecto
 ![Tablas](https://cdn.discordapp.com/attachments/825096835689349140/839275819326373888/3FN.PNG) FN3
 * Y por último Khalilov terminó el .pdf con los requisitos y estuvo trabajando en el MarkDown del github
 ## Fase 2
-* Soon
+En esta fase se empezó a realizar el codigo sql
+* Aqui esta el codigo .sql
+![Codigo Workbench](https://raw.githubusercontent.com/jflorespastrana/Iberos/main/esquema_sql.PNG) Workbench
