@@ -110,16 +110,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Actividades`
+-- Table `mydb`.`Actividad`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Actividades` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Actividad` (
   `Nombre` VARCHAR(60) NOT NULL,
   `Fecha` DATE NULL,
   `Tipo` VARCHAR(45) NULL,
   `Museo_Ibero_CIF` VARCHAR(9) NOT NULL,
   PRIMARY KEY (`Nombre`, `Museo_Ibero_CIF`),
-  INDEX `fk_Actividades_Museo_Ibero1_idx` (`Museo_Ibero_CIF` ASC) VISIBLE,
-  CONSTRAINT `fk_Actividades_Museo_Ibero1`
+  INDEX `fk_Actividad_Museo_Ibero1_idx` (`Museo_Ibero_CIF` ASC) VISIBLE,
+  CONSTRAINT `fk_Actividad_Museo_Ibero1`
     FOREIGN KEY (`Museo_Ibero_CIF`)
     REFERENCES `mydb`.`Museo_Ibero` (`CIF`)
     ON DELETE CASCADE
