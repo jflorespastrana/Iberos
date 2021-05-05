@@ -24,7 +24,8 @@ En esta fase empezamos a trabajar en el Proyecto
 ## Fase 2
 En esta fase se empezó a realizar el codigo sql
 * Aqui esta el codigo .sql
-![Codigo Workbench](https://raw.githubusercontent.com/jflorespastrana/Iberos/main/esquema_sql.PNG) Workbench
+![Codigo Workbench](https://raw.githubusercontent.com/jflorespastrana/Iberos/main/esquema_sql.PNG) 
+* Workbench
 [ARCHIVO CON TABLAS SQL](https://github.com/jflorespastrana/Iberos/blob/main/iberos.sql)
 * Se crea otro archivo .sql para insertar los datos
 [ARCHIVO CON DATOS](https://github.com/jflorespastrana/Iberos/blob/main/datos.sql)
