@@ -31,3 +31,5 @@ En esta fase se empezó a realizar el codigo sql
 [ARCHIVO CON DATOS](https://github.com/jflorespastrana/Iberos/blob/main/datos.sql)
 * Creamos un archivo para realizar instrucciones
 [ARCHIVO CON INSTRUCCIONES Y ENUNCIADOS](https://github.com/jflorespastrana/Iberos/blob/main/instrucciones.sql)
+* Se crea un archivo con las explicaciones [ARCHIVO EXPLICANDO TIPOS DE DATOS, RESTRICCIONS Y CONSULTAS](https://github.com/jflorespastrana/Iberos/blob/main/Documento%20Explicativo%20Tablas%20y%20Consultas.pdf)
+
