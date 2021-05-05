@@ -34,4 +34,6 @@ En esta fase se empezó a realizar el codigo sql
 * Se crea un archivo con las explicaciones [ARCHIVO EXPLICANDO TIPOS DE DATOS, RESTRICCIONS Y CONSULTAS](https://github.com/jflorespastrana/Iberos/blob/main/Documento%20Explicativo%20Tablas%20y%20Consultas.pdf)
 * Captura de pantalla del Trello 
 ![Trello](https://i.ibb.co/pv5PQ6w/trello.png) 
+[Enlace del tablero trello](https://trello.com/b/z83Dnm2h/proyecto-%C3%ADberos-bbdd)
+
 
