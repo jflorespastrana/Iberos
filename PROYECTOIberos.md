@@ -25,3 +25,4 @@ En esta fase empezamos a trabajar en el Proyecto
 En esta fase se empezó a realizar el codigo sql
 * Aqui esta el codigo .sql
 ![Codigo Workbench](https://raw.githubusercontent.com/jflorespastrana/Iberos/main/esquema_sql.PNG) Workbench
+* Se crea otro archivo .sql para ejectuar las insutrucciones CREATE, INSERT, UPDATE, DELETE y SELECT
